@@ -77,9 +77,10 @@
     <text x="218" y="571" text-anchor="middle" class="small">O₂, nyomás, hőmérséklet, naplózás</text>
     <text x="218" y="589" text-anchor="middle" class="small">belépési tiltás és riasztás</text>
 
-    <rect x="85" y="630" width="265" height="55" rx="4" class="soft"/>
-    <text x="218" y="655" text-anchor="middle" class="label">Ciklusvégi elszívó ventilátor</text>
-    <text x="218" y="673" text-anchor="middle" class="small">külön, szabadtéri kifúvás</text>
+    <rect x="85" y="630" width="265" height="70" rx="4" class="soft"/>
+    <text x="218" y="652" text-anchor="middle" class="label">Elszívó ventilátor</text>
+    <text x="218" y="669" text-anchor="middle" class="small">purge fázis: aktív push-pull</text>
+    <text x="218" y="684" text-anchor="middle" class="small">ciklusvégén: visszaszellőztetés</text>
 
     <!-- Warehouse -->
     <text x="485" y="45" class="head">2. Tömített raktár – felülnézet</text>
@@ -126,8 +127,10 @@
     <!-- Extraction manifold -->
     <path d="M650 125 H1375 V180" class="extract"/>
     <path d="M727 125 V180 M907 125 V180 M1087 125 V180 M1247 125 V180" class="thin"/>
-    <text x="980" y="115" text-anchor="middle" class="small">felső elszívó gyűjtővezeték</text>
-    <path d="M1375 125 H1455" class="extract"/>
+    <text x="980" y="115" text-anchor="middle" class="small">felső elszívó gyűjtővezeték (aktív, ventilátorral hajtott)</text>
+    <rect x="1380" y="105" width="75" height="40" rx="4" class="soft"/>
+    <text x="1417" y="129" text-anchor="middle" class="small">elszívó</text>
+    <path d="M1455 125 H1470" class="extract"/>
 
     <!-- Sensors -->
     <g>
@@ -154,23 +157,26 @@
     <rect x="35" y="775" width="750" height="145" class="box"/>
     <line x1="55" y1="795" x2="765" y2="795" class="thin"/>
     <line x1="55" y1="900" x2="765" y2="900" class="line"/>
-    <text x="65" y="788" class="small">mennyezet / felső elszívás és O₂-minta</text>
+    <text x="65" y="788" class="small">mennyezet / aktív elszívás (push-pull) és O₂-minta</text>
     <rect x="170" y="825" width="450" height="58" class="seed"/>
     <text x="395" y="859" text-anchor="middle" class="label">vetőmag tárolás</text>
     <path d="M90 895 H145" class="gas"/>
     <text x="60" y="880" class="small blue">alsó/közép</text>
     <text x="60" y="894" class="small blue">N₂-befúvás</text>
     <path d="M700 810 H755" class="extract"/>
-    <text x="612" y="817" class="small">felső levegő-elvezetés</text>
+    <text x="612" y="817" class="small">aktív elszívás, ventilátorral</text>
 
     <rect x="830" y="755" width="625" height="165" rx="4" class="soft"/>
     <text x="850" y="783" class="subhead">Üzemállapotok</text>
     <text x="850" y="810" class="label">1. Inertizálás:</text>
-    <text x="980" y="810" class="label">alsó/közép N₂-befúvás + felső elszívás</text>
+    <text x="980" y="810" class="label">alsó/közép N₂-befúvás + aktív felső elszívás (push-pull, Q</text>
+    <text x="1290" y="810" class="small">N₂</text>
+    <text x="1300" y="810" class="label">≥ Q</text>
+    <text x="1330" y="810" class="small">elszívás</text>
     <text x="850" y="836" class="label">2. Tartás:</text>
-    <text x="980" y="836" class="label">zárt elszívás, kis pozitív nyomás, automatikus N₂-utántöltés</text>
+    <text x="980" y="836" class="label">elszívó KI, szelep zárva, kis pozitív nyomás, automatikus N₂-utántöltés</text>
     <text x="850" y="862" class="label">3. Kiengedés:</text>
-    <text x="980" y="862" class="label">vezérelt frisslevegős elszívás, többpontos O₂-ellenőrzés</text>
+    <text x="980" y="862" class="label">elszívó ismét ON, vezérelt frisslevegős szellőztetés, többpontos O₂-ellenőrzés</text>
     <text x="850" y="895" class="small red">Kezelés alatt belépés tilos. Csak igazoltan normál O₂-szint után lehet belépni.</text>
   </svg>
   <p class="note"><span class="warning">Biztonsági megjegyzés:</span> Az N₂ oxigénhiányt okoz, ezért a részletes kivitelezési tervhez kockázatértékelés, munkavédelmi reteszelés, O₂-riasztás, vészhelyzeti eljárás és jogosult tervezői felülvizsgálat szükséges. A kezelési O₂-célértéket és időtartamot a célkártevő, hőmérséklet és a vonatkozó előírások alapján kell meghatározni.</p>
@@ -194,8 +200,8 @@
 
     <h2>Átvihető tanulság a tervezett vetőmagraktárra</h2>
     <ul>
-      <li>Az alsó/középső N₂-befúvás és felső, szabályozott levegőelvezetés működő elv; aktív elszívó ventilátor a kezelés alatt nem alapfeltétel.</li>
-      <li>A felső kifúvó a kezdeti átöblítéskor legyen nyitva, majd a cél-O₂ elérésekor zárjon; a fenntartás automatikus N₂-utántöltéssel és enyhe pozitív nyomással történjen.</li>
+      <li>Az alsó/középső N₂-befúvás és felső levegőelvezetés működő elv. Ez aktív, ventilátorral hajtott elszívással ("push-pull" átöblítés) kombinálva tovább javítható: a jól definiált, mindkét végén hajtott gázáramlás jobb kiszorítási hatásfokot adhat, mint egy passzív kifúvó szelep.</li>
+      <li>A purge fázisban az elszívás áramlását a betáplált N₂-áram alatt vagy azzal egyenlő szinten kell tartani, hogy a tér ne kerüljön jelentős negatív nyomásba. A cél-O₂ elérésekor az elszívó leáll, a szelep zár; a fenntartás automatikus N₂-utántöltéssel és enyhe pozitív nyomással történik, elszívás nélkül.</li>
       <li>A 0,1–0,9% O₂ tartományhoz több belső mintavételi pont, termékoldali N₂-tisztaságmérés és megfelelően nagy tisztaságú generátor szükséges.</li>
       <li>A ciprusi kísérlet 11–22 napos fenntartást alkalmazott. Ez nem igazolja az általános 5 napos kezelést; a szükséges expozíció a célkártevőtől és a tárolt vetőmag legalacsonyabb hőmérsékletétől függ.</li>
     </ul>
@@ -205,28 +211,28 @@
 
   <section class="page-break summary">
     <h1>Előméretezési összefoglaló – N₂-kezelő rendszer</h1>
-    <p><strong>Számítási alap:</strong> 2 000 m³ nettó gáztérfogat (a 25 m³ vetőmag-kiszorítás figyelembevételével kb. 1 975 m³, tervezéshez 2 000 m³-re kerekítve). A méretek koncepcionálisak; véglegesítésük a tömörségvizsgálat, a helyszíni vezetékhosszak és a választott PSA gyártói adatai alapján történjen.</p>
+    <p><strong>Számítási alap:</strong> kb. 2 100 m³ nettó gáztérfogat. A méretek koncepcionálisak; véglegesítésük a tömörségvizsgálat, a helyszíni vezetékhosszak és a választott PSA gyártói adatai alapján történjen.</p>
 
     <table>
       <tr><th>Tervezési elem</th><th>Javasolt érték / méret</th><th>Tervezési megjegyzés</th></tr>
       <tr><td>Raktári célérték</td><td>≤1,0 tf% O₂</td><td>Többpontos belső O₂-méréssel felügyelendő.</td></tr>
       <tr><td>N₂-minőség</td><td>≥99,9 tf% N₂</td><td>99%-os N₂ nem ad elegendő tartalékot a ≤1% O₂ célérték tartásához.</td></tr>
       <tr><td>Kezdeti átöblítés</td><td>24 óra</td><td>A cél-O₂ eléréséig tart; eltérhet a tényleges tömörség és eloszlás szerint.</td></tr>
-      <tr><td>Indító N₂-mennyiség</td><td>7 500–8 000 Nm³</td><td>Elméleti minimum kb. 6 280 Nm³; a többlet a keveredést, holttereket és veszteségeket fedezi.</td></tr>
-      <tr><td>PSA N₂-generátor</td><td>200 Nm³/h @ 99,9% N₂</td><td>24 órás inertizáláshoz, jó gázelosztás esetén; tömörségvizsgálat és próbaüzem alapján 150–350 Nm³/h között módosítható.</td></tr>
-      <tr><td>Kompresszor</td><td>750–850 Nm³/h FAD, 7–8 bar, kb. 80–95 kW</td><td>A végleges légigényt a kiválasztott PSA levegő/N₂ aránya igazolja.</td></tr>
-      <tr><td>Levegő-előkészítés</td><td>3–5 m³ nedveslevegő-tartály; ≥1 300 Nm³/h hűtveszárító és szűrők; 2–5 m³ szárazlevegő-tartály</td><td>Automatikus kondenzvízürítés; olajos kompresszornál aktívszén-szűrés szükséges.</td></tr>
-      <tr><td>N₂-puffertartály</td><td>10–20 m³, 8–10 bar</td><td>PSA-ciklusok és rövid csúcsterhelések kiegyenlítésére.</td></tr>
-      <tr><td>Csőhálózat</td><td>Fővezeték előzetesen DN80–DN100; 4–6 szabályozható befúvási zóna</td><td>Végleges átmérő nyomásveszteség-számítással; befúvás alsó/középső zónákba.</td></tr>
-      <tr><td>Felső levegőelvezetés</td><td>DN100–DN125 szabályozott kifúvó</td><td>Az átöblítés alatt nyitott, a cél-O₂ elérésekor zár. Kezelés alatt aktív elszívó általában nem szükséges.</td></tr>
-      <tr><td>O₂-mérés és vezérlés</td><td>Legalább 6 belső mintavételi pont + PLC</td><td>Padló-, áru-, közép- és felső zónákban; a legmagasabb O₂-érték vezérelje az utántöltést.</td></tr>
-      <tr><td>Ciklusvégi elszívó</td><td>6 000–8 000 m³/h</td><td>Kizárólag ellenőrzött visszaszellőztetéshez; kb. 3–4 légcsere/óra.</td></tr>
-      <tr><td>5 napos tartás</td><td>O₂-alapú automatikus N₂-utántöltéssel</td><td>A szükséges N₂-fogyasztás a mért tömítetlenségtől függ; a kártevőirtási időt külön validálni kell.</td></tr>
+      <tr><td>Indító N₂-mennyiség</td><td>kb. 3 200–3 600 Nm³</td><td>Jó gázelosztású ("átöblítéses", push-pull) purge esetén; konzervatív, teljesen kevert modellnél akár 6 600 Nm³ is lehet.</td></tr>
+      <tr><td>PSA N₂-generátor</td><td>150 Nm³/h @ 99,9% N₂</td><td>24 órás inertizáláshoz, jó gázelosztás (aktív push-pull) esetén; tömörségvizsgálat és próbaüzem alapján 150–350 Nm³/h között módosítható.</td></tr>
+      <tr><td>Kompresszor</td><td>560–640 Nm³/h FAD, 7–8 bar, kb. 60–70 kW</td><td>A végleges légigényt a kiválasztott PSA levegő/N₂ aránya igazolja.</td></tr>
+      <tr><td>Levegő-előkészítés</td><td>2 m³ nedveslevegő-tartály; ≥700 Nm³/h hűtveszárító és szűrők; 1,5–2 m³ szárazlevegő-tartály</td><td>Automatikus kondenzvízürítés; olajos kompresszornál aktívszén-szűrés szükséges.</td></tr>
+      <tr><td>N₂-puffertartály</td><td>6–10 m³, 8–10 bar</td><td>PSA-ciklusok és rövid csúcsterhelések kiegyenlítésére.</td></tr>
+      <tr><td>Csőhálózat</td><td>Fővezeték előzetesen DN65; 4–6 szabályozható befúvási zóna</td><td>Végleges átmérő nyomásveszteség-számítással; befúvás alsó/középső zónákba.</td></tr>
+      <tr><td>Felső elszívás (purge fázis)</td><td>Aktív ventilátor, kb. a generátor N₂-áramával megegyező vagy kisebb kapacitás</td><td>Push-pull elv: N₂ befúvás alul + aktív elszívás felül, egyidejűleg. Q<sub>N₂</sub> ≥ Q<sub>elszívás</sub>, hogy a tér ne kerüljön negatív nyomásba.</td></tr>
+      <tr><td>O₂-mérés és vezérlés</td><td>Legalább 6 belső mintavételi pont + PLC</td><td>Padló-, áru-, közép- és felső zónákban, valamint az elszívott áramban; a legmagasabb mért O₂-érték vezérelje az utántöltést.</td></tr>
+      <tr><td>Ciklusvégi visszaszellőztetés</td><td>6 000–8 000 m³/h (ugyanaz az elszívó ventilátor)</td><td>Kizárólag ellenőrzött visszaszellőztetéshez; kb. 3–4 légcsere/óra.</td></tr>
+      <tr><td>5 napos tartás</td><td>Elszívó KI, O₂-alapú automatikus N₂-utántöltéssel</td><td>A szükséges N₂-fogyasztás a mért tömítetlenségtől függ; a kártevőirtási időt külön validálni kell.</td></tr>
     </table>
 
     <h2>Elvi üzemeltetési sorrend</h2>
     <p><strong>Kompresszor → hűtveszárító és szűrők → PSA N₂-generátor → N₂-puffertartály → nyomáscsökkentő / átfolyásmérő → raktári csőhálózat.</strong></p>
-    <p>Inertizáláskor a N₂ alul vagy az áru légtereiben lép be, a kiszorított levegő felül, szabályozott szelepen távozik. A célérték elérése után a felső szelep zár, a rendszer enyhe pozitív nyomáson, automatikus N₂-utántöltéssel tartja az O₂-határértéket. A ciklusvégi ventilátor csak a biztonságos, igazolt visszaszellőztetéshez használható.</p>
+    <p>Inertizáláskor a N₂ alul vagy az áru légtereiben lép be, míg egy aktív, ventilátorral hajtott elszívás a felső zónából egyidejűleg távolítja el a kiszorított, oxigéndús keveréket ("push-pull" átöblítés). A cél-O₂ elérése után az elszívó leáll és a szelep zár; a rendszer ezután enyhe pozitív nyomáson, automatikus N₂-utántöltéssel tartja az O₂-határértéket, elszívás nélkül. A ciklus végén az elszívó ismét bekapcsol a biztonságos, igazolt visszaszellőztetéshez.</p>
     <p class="source"><strong>Biztonság:</strong> Az oxigénszegény tér életveszélyes. A részletes kivitelezéshez jogosult tervezői ellenőrzés, kockázatértékelés, reteszelt belépés, külső O₂-riasztás és dokumentált visszaszellőztetési eljárás szükséges.</p>
   </section>
 </body>

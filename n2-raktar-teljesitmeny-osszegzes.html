@@ -2,7 +2,7 @@
 <html lang="hu">
 <head>
   <meta charset="utf-8">
-  <title>N₂-raktár – 24 órás inertizálás berendezésméretezése (felülvizsgált)</title>
+  <title>N₂-raktár – 48 órás inertizálás, 3 hetes fenntartás: berendezésméretezés</title>
   <style>
     @page { size: A4 landscape; margin: 14mm; }
     * { box-sizing: border-box; }
@@ -20,80 +20,75 @@
   </style>
 </head>
 <body>
-  <h1>N₂-raktár – 24 órás inertizálás: felülvizsgált berendezésméretezés</h1>
-  <p><strong>Előméretezési alap:</strong> 2 100 m³ nettó gáztér, ≤1,0 tf% raktári O₂-cél, ≥99,9 tf% N₂ termékgáz, 24 órás kezdeti inertizálási célidő, 5 napos szinten tartás.</p>
-  <p><strong>Miért kisebb ez a méretezés a korábbinál?</strong> A korábbi számítás egy konzervatív, teljes keveredésű (jól kevert tér) modellt használt, amely a gyakorlatban elérhetőnél nagyobb N₂-igényt ad. Alsó/középső, több ponton történő, kis sebességű befúvással és felső, szabályozott kifúvással ("átöblítéses" elv) a levegő rétegzett kiszorítása hatékonyabb, ezért kevesebb N₂ is elegendő lehet. Az alábbi táblázat a gázelosztás minőségétől függő forgatókönyveket mutatja, és jelöli a fizikai alsó korlátot is.</p>
+  <h1>N₂-raktár – 48 órás inertizálás, 3 hetes fenntartás: berendezésméretezés</h1>
+  <p><strong>Frissített üzemi paraméterek:</strong> kb. 2 100 m³ nettó gáztér, ≤1,0 tf% raktári O₂-cél, ≥99,9 tf% N₂ termékgáz, <strong>48 órás</strong> kezdeti inertizálási célidő, <strong>3 hetes (21 napos)</strong> szinten tartás.</p>
+  <p><strong>Miért csökken a szükséges generátorméret a 24 órás esethez képest?</strong> A betáplálandó N₂-mennyiség egy adott térfogatcsere-tényezőnél (pl. 1,5×) független az átöblítés idejétől — csak az átlagos áramlási sebesség változik. A 24 óráról 48 órára hosszabbított idő a szükséges generátorteljesítményt körülbelül a felére csökkenti.</p>
 
   <table>
-    <tr><th>Forgatókönyv</th><th>Térfogatcsere-tényező*</th><th>Szükséges N₂ 24 órához</th><th>Átlagos N₂-áram</th><th>Generátor (tartalékkal)</th></tr>
-    <tr><td>Elméleti fizikai minimum (tökéletes, keveredés nélküli kiszorítás — a valóságban nem érhető el)</td><td>1,0×</td><td>2 100 Nm³</td><td>87,5 Nm³/h</td><td>—</td></tr>
-    <tr><td style="color:#9d1d1d;"><strong>100 Nm³/h — nem javasolt</strong></td><td>1,14×</td><td>2 400 Nm³</td><td>100 Nm³/h</td><td>alig 14% tartalék a fizikai minimum felett</td></tr>
-    <tr class="highlight"><td><strong>Hatékony, jól elosztott befúvás — ajánlott alsó határ</strong></td><td><strong>1,5×</strong></td><td><strong>3 150 Nm³</strong></td><td><strong>131 Nm³/h</strong></td><td><strong>150 Nm³/h</strong></td></tr>
-    <tr><td>Közepes, biztonságosabb választás</td><td>2,0×</td><td>4 200 Nm³</td><td>175 Nm³/h</td><td>200–210 Nm³/h</td></tr>
-    <tr><td>Konzervatív, teljesen kevert tér</td><td>3,14×</td><td>6 594 Nm³</td><td>275 Nm³/h</td><td>330–350 Nm³/h</td></tr>
+    <tr><th>Forgatókönyv</th><th>Térfogatcsere-tényező*</th><th>Szükséges N₂ (összesen)</th><th>Átlagos N₂-áram (48 óra alatt)</th><th>Generátor (tartalékkal)</th></tr>
+    <tr><td>Elméleti fizikai minimum (tökéletes, keveredés nélküli kiszorítás — a valóságban nem érhető el)</td><td>1,0×</td><td>2 100 Nm³</td><td>43,75 Nm³/h</td><td>—</td></tr>
+    <tr class="highlight"><td><strong>Hatékony, jól elosztott befúvás, aktív push-pull elszívással — ajánlott</strong></td><td><strong>1,5×</strong></td><td><strong>3 150 Nm³</strong></td><td><strong>65,6 Nm³/h</strong></td><td><strong>80 Nm³/h</strong></td></tr>
+    <tr><td>Közepes, biztonságosabb választás</td><td>2,0×</td><td>4 200 Nm³</td><td>87,5 Nm³/h</td><td>105–110 Nm³/h</td></tr>
+    <tr><td>Konzervatív, teljesen kevert tér</td><td>3,14×</td><td>6 594 Nm³</td><td>137,4 Nm³/h</td><td>165–170 Nm³/h</td></tr>
   </table>
-  <p class="small">* A térfogatcsere-tényező azt mutatja, hányszor kell a raktár gáztérfogatával megegyező mennyiségű N₂-t betáplálni ahhoz, hogy a headspace O₂-tartalma 20,9%-ról 1,0%-ra csökkenjen, 99,9%-os N₂ betáplálás mellett. Az 1,0× a fizikailag lehetséges, de gyakorlatban elérhetetlen alsó határ (tökéletes "dugószerű" kiszorítás, nulla visszakeveredés). A N₂ és a levegő sűrűsége közel azonos (moláris tömeg 28 vs. kb. 29 g/mol), ezért nincs erős rétegződési hatás, amely segítené a tiszta kiszorítást — mindig marad visszakeveredés és holttér. Ezért a 100 Nm³/h (csak 14% tartalék a fizikai minimum felett) nem ad elegendő biztonságot; a gyakorlatban reálisan elérhető minimum az 1,5× tartomány.</p>
+  <p class="small">* A térfogatcsere-tényező azt mutatja, hányszor kell a raktár gáztérfogatával megegyező mennyiségű N₂-t betáplálni ahhoz, hogy a headspace O₂-tartalma 20,9%-ról 1,0%-ra csökkenjen, 99,9%-os N₂ betáplálás mellett. Az 1,5× az aktív, ventilátorral segített push-pull átöblítéssel (N₂ befúvás alul + egyidejű, kontrollált elszívás felül) reálisan elérhető tartomány; a 2,0–3,14× a kevésbé hatékony gázelosztásra vonatkozó biztonságosabb alternatívák.</p>
 
-  <h2>Ajánlott, felülvizsgált berendezésteljesítmények</h2>
+  <h2>Ajánlott, 48 órás inertizálásra méretezett berendezésteljesítmények</h2>
   <table>
     <tr><th>Berendezés / elem</th><th>Javasolt teljesítmény vagy méret</th><th>Mire szolgál?</th></tr>
-    <tr><td>PSA N₂-generátor</td><td><strong>150 Nm³/h @ 99,9% N₂</strong></td><td>A "hatékony gázelosztás" forgatókönyv szerinti kiinduló méret; a tényleges tömörségvizsgálat és próbaüzem alapján 150–350 Nm³/h között módosítható. 100 Nm³/h alá csökkenteni nem javasolt.</td></tr>
-    <tr><td>Indító N₂-mennyiség</td><td><strong>kb. 3 200–3 600 Nm³</strong></td><td>2 100 m³ gáztér 21%-ról ≤1% O₂-re csökkentéséhez, jó gázelosztás esetén, kb. 15–20% tartalékkal.</td></tr>
-    <tr><td>Kompresszor</td><td><strong>560–640 Nm³/h FAD, 7–8 bar, kb. 60–70 kW</strong></td><td>150 Nm³/h, 99,9%-os PSA-hoz, kb. 4:1 levegő/N₂ arány mellett. A rendelési értéket a PSA gyártó garantált aránya igazolja.</td></tr>
-    <tr><td>Nedveslevegő-tartály</td><td><strong>2 m³</strong></td><td>Kompresszor utáni nyomáspuffer, kondenzvíz leválasztása automatikus ürítéssel.</td></tr>
-    <tr><td>Hűtveszárító és szűrők</td><td><strong>≥700 Nm³/h</strong></td><td>PSA-védelem: nedvesség, olaj és részecskék eltávolítása.</td></tr>
-    <tr><td>Szárazlevegő-tartály</td><td><strong>1,5–2 m³</strong></td><td>A PSA ciklikus levegőigényének csillapítása.</td></tr>
-    <tr><td>N₂-puffertartály</td><td><strong>6–10 m³, PN10</strong></td><td>Termékgáz-ellátás és rövid csúcsterhelések kiegyenlítése.</td></tr>
-    <tr><td>N₂ fővezeték</td><td><strong>DN65</strong></td><td>150 Nm³/h átöblítési térfogatáramhoz; véglegesítése vezetékhossz és nyomásveszteség alapján.</td></tr>
-    <tr><td>Befúvási zónák</td><td><strong>4–6 külön szabályozható ág</strong></td><td>Alsó/középső zónás gázelosztás, holtterek csökkentése — a jobb elosztás egyben a kisebb generátorméret feltétele is.</td></tr>
-    <tr><td>Felső kifúvó</td><td><strong>DN100 szabályozott szelep</strong></td><td>A kezdeti átöblítéskor a kiszorított levegő elvezetése; a cél-O₂ elérése után zár.</td></tr>
+    <tr><td>PSA N₂-generátor</td><td><strong>80 Nm³/h @ 99,9% N₂</strong></td><td>A "hatékony gázelosztás" forgatókönyv szerinti kiinduló méret, 48 órás inertizáláshoz; próbaüzem alapján 80–170 Nm³/h között módosítható.</td></tr>
+    <tr><td>Indító N₂-mennyiség</td><td><strong>kb. 3 200–3 800 Nm³</strong></td><td>2 100 m³ gáztér 21%-ról ≤1% O₂-re csökkentéséhez, jó gázelosztás esetén, kb. 15–20% tartalékkal.</td></tr>
+    <tr><td>Kompresszor</td><td><strong>300–350 Nm³/h FAD, 7–8 bar, kb. 35–40 kW</strong></td><td>80 Nm³/h, 99,9%-os PSA-hoz, kb. 4:1 levegő/N₂ arány mellett. A rendelési értéket a PSA gyártó garantált aránya igazolja.</td></tr>
+    <tr><td>Nedveslevegő-tartály</td><td><strong>1,5–2 m³</strong></td><td>Kompresszor utáni nyomáspuffer, kondenzvíz leválasztása automatikus ürítéssel.</td></tr>
+    <tr><td>Hűtveszárító és szűrők</td><td><strong>≥400 Nm³/h</strong></td><td>PSA-védelem: nedvesség, olaj és részecskék eltávolítása.</td></tr>
+    <tr><td>Szárazlevegő-tartály</td><td><strong>1–1,5 m³</strong></td><td>A PSA ciklikus levegőigényének csillapítása.</td></tr>
+    <tr><td>N₂-puffertartály</td><td><strong>4–8 m³, PN10</strong></td><td>Termékgáz-ellátás és rövid csúcsterhelések kiegyenlítése.</td></tr>
+    <tr><td>N₂ fővezeték</td><td><strong>DN50–DN65</strong></td><td>80 Nm³/h átöblítési térfogatáramhoz; véglegesítése vezetékhossz és nyomásveszteség alapján.</td></tr>
+    <tr><td>Befúvási zónák</td><td><strong>4–6 külön szabályozható ág</strong></td><td>Alsó/középső zónás gázelosztás, holtterek csökkentése — a jobb elosztás a kisebb generátorméret feltétele.</td></tr>
+    <tr><td>Aktív elszívó ventilátor (purge fázis)</td><td><strong>≤80 Nm³/h effektív elvezetés</strong></td><td>Push-pull elv: az elszívás ne haladja meg a befúvott N₂-áramot, hogy a tér ne kerüljön negatív nyomásba.</td></tr>
     <tr><td>O₂-mérés</td><td><strong>minimum 6 belső mintavételi pont + PLC</strong></td><td>Az O₂-határérték vezérlése a raktár legmagasabb mért O₂-értéke alapján.</td></tr>
-    <tr><td>Ciklusvégi elszívó ventilátor</td><td><strong>6 000–8 000 m³/h</strong></td><td>Csak visszaszellőztetéshez: kb. 3–4 légcsere/óra. Nem az inertizálási fázis eszköze, mérete nem függ a purge-forgatókönyvtől.</td></tr>
+    <tr><td>Ciklusvégi visszaszellőztetés</td><td><strong>6 000–8 000 m³/h (ugyanaz az elszívó ventilátor)</strong></td><td>Csak visszaszellőztetéshez: kb. 3–4 légcsere/óra. Nem az inertizálási fázis elsődleges mérete.</td></tr>
   </table>
 
   <h2>Üzemeltetési sorrend</h2>
   <p><strong>Kompresszor → hűtveszárító és szűrők → PSA N₂-generátor → N₂-puffertartály → nyomáscsökkentő / átfolyásmérő → raktári csőhálózat.</strong></p>
-  <p>Az inertizálás során a N₂ alul vagy az áru légtereiben, több ponton, kis sebességgel áramlik be; a kiszorított levegő a felső, szabályozott kifúvón távozik. A célérték elérése után a rendszer kis pozitív nyomással, O₂-alapú automatikus N₂-utántöltéssel tartja az értéket.</p>
+  <p>Az inertizálás (48 óra) során a N₂ alul vagy az áru légtereiben, több ponton áramlik be, míg egy aktív, ventilátorral hajtott elszívás a felső zónából egyidejűleg távolítja el a kiszorított keveréket. A célérték elérése után az elszívó leáll, a szelep zár; a rendszer ezután 21 napig, enyhe pozitív nyomással, O₂-alapú automatikus N₂-utántöltéssel tartja az értéket, elszívás nélkül.</p>
 
-  <p class="small"><span class="warning">Fontos:</span> A 150 Nm³/h a jelenlegi legjobb becslésű, gyakorlatban reálisan elérhető alsó határ, de nem helyettesíti a tényleges méretezést. A végleges generátor- és kompresszorméretet a helyszíni tömörségvizsgálat, a gázelosztási terv (CFD-szimuláció vagy próbaüzem) és a PSA gyártó garantált levegő/N₂ aránya alapján kell megerősíteni. Ha a próba során a headspace nem éri el 24 órán belül az 1% O₂-t, a generátor bővíthető a 200–350 Nm³/h sávra. Az 5 napos kezelés kártevőirtási eredményessége nem vezethető le kizárólag a berendezés teljesítményéből; a célszervezet, a peték jelenléte és a vetőmag legalacsonyabb hőmérséklete alapján külön validálás szükséges.</p>
+  <p class="small"><span class="warning">Fontos:</span> A 80 Nm³/h a jelenlegi legjobb becslésű, gyakorlatban reálisan elérhető minimum, de nem helyettesíti a tényleges méretezést. A végleges generátor- és kompresszorméretet a helyszíni tömörségvizsgálat, a gázelosztási terv (CFD-szimuláció vagy próbaüzem) és a PSA gyártó garantált levegő/N₂ aránya alapján kell megerősíteni. Ha a próba során a headspace nem éri el 48 órán belül az 1% O₂-t, a generátor bővíthető a 105–170 Nm³/h sávra.</p>
 
   <section class="page-break">
-    <h1>Számítási módszertan és fenntartási kapacitás</h1>
+    <h1>Számítási módszertan és a 3 hetes fenntartási kapacitás</h1>
     <table>
       <tr><th>Paraméter</th><th>Érték</th><th>Magyarázat</th></tr>
       <tr><td>Számítási gáztér</td><td>V = 2 100 m³</td><td>Nettó gáztérfogatra kerekített érték.</td></tr>
       <tr><td>Kezdeti O₂-koncentráció</td><td>C₀ = 20,9%</td><td>Normál levegő.</td></tr>
       <tr><td>N₂ termékgáz O₂-tartalma</td><td>C<sub>s</sub> = 0,1%</td><td>99,9% N₂ tisztaság esetén.</td></tr>
       <tr><td>Raktári célérték</td><td>C<sub>cél</sub> = 1,0%</td><td>Az inertizálási fázis és a fenntartási automatika felső O₂-határértéke.</td></tr>
-      <tr><td>Fizikai minimum (tökéletes kiszorítás)</td><td>V × 1,0 = <strong>2 100 Nm³</strong></td><td>Elméleti alsó korlát; a valóságban nem érhető el, mert mindig van visszakeveredés.</td></tr>
-      <tr><td>Teljesen kevert modell (felső becslés)</td><td>V × ln[(C₀ − C<sub>s</sub>) / (C<sub>cél</sub> − C<sub>s</sub>)] = <strong>6 594 Nm³</strong></td><td>Ideális, azonnali és teljes keveredés esetére számított mennyiség; a valóságban ennél kevesebb is elegendő lehet jó gázelosztásnál.</td></tr>
-      <tr><td>Átöblítéses (sweep-through) modell, ajánlott eset</td><td>V × 1,5 = <strong>3 150 Nm³</strong></td><td>Rétegzett, alulról felfelé történő kiszorítás, több befúvási ponttal és felső elvezetéssel; ez a gyakorlatban reálisan elérhető alsó tartomány.</td></tr>
-      <tr><td>24 órás átlagáram (ajánlott eset)</td><td>3 150 / 24 = <strong>131 Nm³/h</strong></td><td>Ehhez adódik a kb. 15%-os tervezési tartalék, így 150 Nm³/h generátor.</td></tr>
-      <tr><td>100 Nm³/h vizsgálata</td><td>100 × 24 = 2 400 Nm³ → 1,14×</td><td>Csak 14% tartalék a fizikai minimum felett; a valós keveredési veszteségekre nincs elegendő fedezet, ezért nem javasolt.</td></tr>
+      <tr><td>Átöblítéses (sweep-through) modell, ajánlott eset</td><td>V × 1,5 = <strong>3 150 Nm³</strong></td><td>Nem függ az átöblítés idejétől, csak a térfogattól és a gázelosztás minőségétől.</td></tr>
+      <tr><td>48 órás átlagáram (ajánlott eset)</td><td>3 150 / 48 = <strong>65,6 Nm³/h</strong></td><td>Ehhez adódik a kb. 20%-os tervezési tartalék, így 80 Nm³/h generátor.</td></tr>
+      <tr><td>Összehasonlítás: 24 órás célidő esetén</td><td>3 150 / 24 = 131 Nm³/h → 150 Nm³/h generátor</td><td>A 48 órára hosszabbított idő kb. felére csökkenti a szükséges generátorteljesítményt.</td></tr>
     </table>
-    <p class="small">A pontos térfogatcsere-tényezőt a tényleges befúvási elrendezés, a tárolt vetőmag légáramlást gátló hatása és a mért tömítettség határozza meg. Éppen ezért a végleges generátorválasztás előtt célszerű próbaüzemet vagy CFD-alapú szimulációt végezni, hasonlóan ahhoz, ahogyan azt hasonló, nitrogénes rizstároló siló esettanulmányokban is alkalmazták.</p>
 
-    <h2>Fenntartás az inertizálás után — korrigált modell</h2>
-    <p>Mivel a raktárat enyhe <strong>túlnyomáson</strong> tartják, nem külső levegő szivárog be, hanem a belső, már alacsony O₂-tartalmú gázkeverék szivárog ki a tömítetlenségeken. Ebben az esetben a pótlásra betáplált N₂-nek csak a kiszivárgott gáz <em>térfogatát</em> kell fedeznie, nem kell egy bejövő, 20,9% O₂-tartalmú levegőáramot hígítania. Állandó térfogat és nyomás mellett a mérlegegyenlet:</p>
+    <h2>Fenntartás 3 hétig — pozitív nyomású modell</h2>
+    <p>A raktár enyhe <strong>túlnyomáson</strong> marad a teljes 21 napos fenntartási fázisban, ezért nem külső levegő szivárog be, hanem a belső, alacsony O₂-tartalmú gázkeverék szivárog ki. A pótlásra betáplált N₂-nek csak a kiszivárgott gáz térfogatát kell fedeznie:</p>
     <p style="text-align:center; margin:10px 0;"><strong>Q<sub>N₂,utántöltés</sub> = Q<sub>szivárgás</sub></strong></p>
-    <p>Mivel a betáplált N₂ (0,1% O₂) tisztább, mint a kiszivárgó keverék (kb. 1% O₂), az egyensúlyi O₂-koncentráció idővel a betáplált gáz tisztasága felé közelít — tehát a rendszer önmagát "tisztítja", amíg a túlnyomás fennáll.</p>
     <table>
-      <tr><th>Feltételezett N₂-elszivárgás</th><th>Szükséges N₂-utántöltés</th><th>5 napos (120 h) mennyiség</th></tr>
-      <tr><td>1 Nm³/h</td><td>1 Nm³/h</td><td>120 Nm³</td></tr>
-      <tr><td>2 Nm³/h</td><td>2 Nm³/h</td><td>240 Nm³</td></tr>
-      <tr><td>5 Nm³/h</td><td>5 Nm³/h</td><td>600 Nm³</td></tr>
-      <tr><td>10 Nm³/h</td><td>10 Nm³/h</td><td>1 200 Nm³</td></tr>
-      <tr><td>15 Nm³/h</td><td>15 Nm³/h</td><td>1 800 Nm³</td></tr>
+      <tr><th>Feltételezett N₂-elszivárgás</th><th>Szükséges N₂-utántöltés</th><th>21 napos (504 h) mennyiség</th></tr>
+      <tr><td>1 Nm³/h</td><td>1 Nm³/h</td><td>504 Nm³</td></tr>
+      <tr><td>2 Nm³/h</td><td>2 Nm³/h</td><td>1 008 Nm³</td></tr>
+      <tr><td>5 Nm³/h</td><td>5 Nm³/h</td><td>2 520 Nm³</td></tr>
+      <tr><td>10 Nm³/h</td><td>10 Nm³/h</td><td>5 040 Nm³</td></tr>
+      <tr><td>15 Nm³/h</td><td>15 Nm³/h</td><td>7 560 Nm³</td></tr>
+      <tr><td>20 Nm³/h</td><td>20 Nm³/h</td><td>10 080 Nm³</td></tr>
     </table>
-    <p class="small">A tényleges szivárgási ütem a helyszíni tömörségvizsgálatból (pl. nyomásesési próba) határozható meg. A táblázat szerint a választott 150–200 Nm³/h generátor kapacitása minden reális szivárgási tartományhoz jelentős, többszázszoros tartalékot biztosít a fenntartási fázisban — a generátor méretét ezért a 24 órás <em>inertizálási</em> fázis, nem a fenntartás, határozza meg.</p>
+    <p class="small">A táblázat a korábbi, 5 napos (120 h) fenntartási időszak 4,2-szeresére (504 h) van átskálázva. A 80 Nm³/h generátor kapacitása minden reális szivárgási tartományhoz jelentős tartalékot ad a fenntartási fázisban is; a végleges igényt a tömörségvizsgálat adja meg.</p>
 
-    <h2>Fontos korlátozó feltételek a túlnyomásos modellhez</h2>
-    <p>A folyamat zárt kötegelt (batch) üzem: a vetőmag betárolása után az ajtót lezárják, a kezelés alatt nincs ajtónyitás, majd az idő letelte után nyitják, átszellőztetik és kitárolnak. Így az ajtónyitásból eredő levegőbeszivárgás a tartási fázisban nem releváns kockázat — ez kizárólag a ciklus végi, tervezett átszellőztetési lépésre korlátozódik, amit a rendszer külön, ellenőrzött visszaszellőztetéssel kezel.</p>
+    <h2>3 hetes fenntartás — mire kell külön figyelni?</h2>
     <ul>
-      <li><strong>A pozitív nyomást a tartási fázis teljes 5 napjában folyamatosan és mindenhol fenn kell tartani.</strong> Ha a nyomás átmenetileg negatívba fordul — jellemzően hőmérséklet-csökkenés okozta gázösszehúzódás ("légzés"), légköri nyomásingadozás, vagy a ventilátor/generátor véletlen negatív nyomást keltő üzeme miatt —, akkor ezekben a pillanatokban levegő szivárog be, és a korábbi, hígításos modell válik érvényessé.</li>
-      <li><strong>A hőmérséklet-ingadozás ("légzés") a fő fennmaradó kockázat.</strong> Éjszakai lehűlésnél a raktári gáz összehúzódik, ami átmeneti nyomáscsökkenést okozhat; ezt a PLC-nek a nyomásszabályozó automatikus N₂-utántöltéssel kell kompenzálnia, mielőtt a nyomás negatívba fordulna.</li>
-      <li><strong>A diffúziós O₂-transzport</strong> (molekuláris diffúzió a tömítetlenségeken, a nyomáskülönbség irányával szemben) a bulk-áramláshoz képest általában kis hatású, de nem nulla; ezért a belső O₂-mérés a végső biztonsági visszajelzés, nem csak a nyomásszabályozás.</li>
-      <li>A táblázat ezért <strong>ideális, folyamatosan pozitív nyomású, zárt kötegelt üzemre</strong> érvényes; a tényleges üzemi adatokat a próbaüzem és a folyamatos O₂- és nyomásnaplózás igazolja.</li>
+      <li><strong>Négyszer annyi hőmérsékleti ("légzési") ciklus.</strong> 21 nap alatt kb. 21 éjjel-nappali hőmérsékletciklus zajlik le (az 5 napos tervhez képest kb. 4,2-szer több) — a nyomásszabályozó automatikának ugyanannyiszor kell megbízhatóan reagálnia, hogy a nyomás sose váljon negatívvá.</li>
+      <li><strong>Hosszabb, folyamatos üzemidő nagyobb megbízhatósági követelményt jelent</strong> a PLC-nek, a nyomás- és O₂-érzékelőknek, és redundáns riasztásnak/kommunikációnak a teljes 3 hét alatt.</li>
+      <li><strong>A kártevőirtási időtartam szempontjából a 3 hét már jóval defenzívebb választás</strong>, mint az 5 nap: a szakirodalomban idézett, 1% O₂ melletti teljes mentesítési idők nagyságrendileg a 3–6 hetes tartományba esnek 20–26°C közötti hőmérsékleten. A végleges validáláshoz a célkártevőt és a vetőmag tényleges legalacsonyabb hőmérsékletét kell figyelembe venni.</li>
+      <li>A zárt kötegelt (batch) üzem elve nem változik: betárolás → ajtózárás → inertizálás → 21 napos tartás (ajtónyitás nélkül) → nyitás, átszellőztetés, kitárolás.</li>
     </ul>
   </section>
 </body>

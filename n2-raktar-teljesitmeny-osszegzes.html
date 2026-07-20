@@ -69,17 +69,27 @@
     </table>
     <p class="small">A pontos térfogatcsere-tényezőt a tényleges befúvási elrendezés, a tárolt vetőmag légáramlást gátló hatása és a mért tömítettség határozza meg. Éppen ezért a végleges generátorválasztás előtt célszerű próbaüzemet vagy CFD-alapú szimulációt végezni, hasonlóan ahhoz, ahogyan azt hasonló, nitrogénes rizstároló siló esettanulmányokban is alkalmazták.</p>
 
-    <h2>Fenntartás az inertizálás után</h2>
-    <p>A fenntartó N₂-fogyasztást nem lehet a raktártérfogatból hitelesen meghatározni: azt a helyszíni tömörségvizsgálat és O₂-emelkedési próba adja meg. A választott generátor kapacitása (200 Nm³/h) bőséges utántöltési kapacitást biztosít a jellemző szivárgási tartományhoz.</p>
+    <h2>Fenntartás az inertizálás után — korrigált modell</h2>
+    <p>Mivel a raktárat enyhe <strong>túlnyomáson</strong> tartják, nem külső levegő szivárog be, hanem a belső, már alacsony O₂-tartalmú gázkeverék szivárog ki a tömítetlenségeken. Ebben az esetben a pótlásra betáplált N₂-nek csak a kiszivárgott gáz <em>térfogatát</em> kell fedeznie, nem kell egy bejövő, 20,9% O₂-tartalmú levegőáramot hígítania. Állandó térfogat és nyomás mellett a mérlegegyenlet:</p>
+    <p style="text-align:center; margin:10px 0;"><strong>Q<sub>N₂,utántöltés</sub> = Q<sub>szivárgás</sub></strong></p>
+    <p>Mivel a betáplált N₂ (0,1% O₂) tisztább, mint a kiszivárgó keverék (kb. 1% O₂), az egyensúlyi O₂-koncentráció idővel a betáplált gáz tisztasága felé közelít — tehát a rendszer önmagát "tisztítja", amíg a túlnyomás fennáll.</p>
     <table>
-      <tr><th>Feltételezett levegőbeszivárgás</th><th>Elméleti N₂-utántöltés a ≤1% O₂ tartáshoz*</th><th>5 napos mennyiség</th></tr>
-      <tr><td>1 Nm³/h</td><td>22 Nm³/h</td><td>2 650 Nm³</td></tr>
-      <tr><td>2 Nm³/h</td><td>44 Nm³/h</td><td>5 300 Nm³</td></tr>
-      <tr><td>5 Nm³/h</td><td>111 Nm³/h</td><td>13 300 Nm³</td></tr>
-      <tr><td>10 Nm³/h</td><td>221 Nm³/h</td><td>26 500 Nm³</td></tr>
-      <tr><td>15 Nm³/h</td><td>332 Nm³/h</td><td>39 800 Nm³</td></tr>
+      <tr><th>Feltételezett N₂-elszivárgás</th><th>Szükséges N₂-utántöltés</th><th>5 napos (120 h) mennyiség</th></tr>
+      <tr><td>1 Nm³/h</td><td>1 Nm³/h</td><td>120 Nm³</td></tr>
+      <tr><td>2 Nm³/h</td><td>2 Nm³/h</td><td>240 Nm³</td></tr>
+      <tr><td>5 Nm³/h</td><td>5 Nm³/h</td><td>600 Nm³</td></tr>
+      <tr><td>10 Nm³/h</td><td>10 Nm³/h</td><td>1 200 Nm³</td></tr>
+      <tr><td>15 Nm³/h</td><td>15 Nm³/h</td><td>1 800 Nm³</td></tr>
     </table>
-    <p class="small">* Konzervatív, teljes keveredéses modell, 0,1% O₂-tartalmú betáplált N₂ mellett. Enyhe pozitív nyomásnál a tényleges külső levegőbeszivárgás kisebb lehet, mert a szivárgási irány kifelé mutat. 15 Nm³/h feletti szivárgásnál a 200 Nm³/h generátor kapacitása már szűkös lehet — ez is jelzi, hogy a tömörségvizsgálat eredménye alapvetően befolyásolja a végleges generátorméretet.</p>
+    <p class="small">A tényleges szivárgási ütem a helyszíni tömörségvizsgálatból (pl. nyomásesési próba) határozható meg. A táblázat szerint a választott 150–200 Nm³/h generátor kapacitása minden reális szivárgási tartományhoz jelentős, többszázszoros tartalékot biztosít a fenntartási fázisban — a generátor méretét ezért a 24 órás <em>inertizálási</em> fázis, nem a fenntartás, határozza meg.</p>
+
+    <h2>Fontos korlátozó feltételek a túlnyomásos modellhez</h2>
+    <ul>
+      <li><strong>A pozitív nyomást folyamatosan és mindenhol fenn kell tartani.</strong> Ha a nyomás átmenetileg negatívba fordul — például hőmérséklet-csökkenés okozta gázösszehúzódás ("légzés"), ajtónyitás, vagy ventilátor véletlen negatív nyomást keltő működése miatt —, akkor ezekben a pillanatokban levegő szivárog be, és a korábbi, hígításos modell válik érvényessé.</li>
+      <li><strong>A PLC-nek folytonosan szabályoznia kell a nyomást</strong> az O₂-mérés mellett, hogy a rendszer sose kerüljön negatív nyomás alá; ehhez gyors reagálású nyomásmérés és -szabályozás szükséges, különösen éjszakai lehűlés vagy csapadékos, hidegfronti időjárás esetén.</li>
+      <li><strong>A diffúziós O₂-transzport</strong> (molekuláris diffúzió a tömítetlenségeken, a nyomáskülönbség irányával szemben) a bulk-áramláshoz képest általában kis hatású, de nem nulla; ezért a belső O₂-mérés a végső biztonsági visszajelzés, nem csak a nyomásszabályozás.</li>
+      <li>A táblázat ezért <strong>ideális, folyamatosan pozitív nyomású üzemre</strong> érvényes; a tényleges üzemi adatokat a próbaüzem és a folyamatos O₂-naplózás igazolja.</li>
+    </ul>
   </section>
 </body>
 </html>

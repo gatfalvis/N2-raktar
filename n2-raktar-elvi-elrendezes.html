@@ -12,6 +12,15 @@
     svg { display: block; width: 93%; height: auto; margin: 0 auto; border: 1px solid #222; }
     .note { margin: 9px 0 0; font-size: 11px; }
     .warning { font-weight: 700; }
+    .page-break { break-before: page; page-break-before: always; }
+    .summary { max-width: 1120px; margin: 0 auto; font-size: 15px; }
+    .summary h1 { font-size: 25px; margin: 0 0 10px; }
+    .summary h2 { font-size: 18px; margin: 18px 0 7px; }
+    .summary p, .summary li { margin: 5px 0; }
+    .summary table { width: 100%; border-collapse: collapse; margin: 10px 0; }
+    .summary th, .summary td { border: 1px solid #222; padding: 8px; text-align: left; vertical-align: top; }
+    .summary th { background: #e9e9e9; }
+    .source { font-size: 12px; color: #333; }
   </style>
 </head>
 <body>
@@ -45,31 +54,32 @@
     <!-- External plant -->
     <text x="45" y="45" class="head">1. Külső gépészeti zóna</text>
     <rect x="35" y="60" width="395" height="650" rx="5" class="box"/>
-    <rect x="65" y="100" width="145" height="62" rx="4" class="soft"/>
-    <text x="137" y="126" text-anchor="middle" class="label">N₂-generátor</text>
-    <text x="137" y="146" text-anchor="middle" class="small">+ levegő-előkészítés</text>
-    <rect x="250" y="100" width="145" height="62" rx="4" class="soft"/>
-    <text x="322" y="136" text-anchor="middle" class="label">Kompresszor</text>
-    <path d="M210 131 H250" class="gas"/>
+    <rect x="85" y="90" width="265" height="55" rx="4" class="soft"/>
+    <text x="218" y="123" text-anchor="middle" class="label">Kompresszor + nedves levegő tartály</text>
+    <rect x="85" y="175" width="265" height="55" rx="4" class="soft"/>
+    <text x="218" y="204" text-anchor="middle" class="label">Hűtveszárító + szűrők</text>
+    <text x="218" y="220" text-anchor="middle" class="small">kondenzvíz-, olaj- és részecskeleválasztás</text>
+    <path d="M218 145 V175" class="gas"/>
+    <rect x="85" y="260" width="265" height="55" rx="4" class="soft"/>
+    <text x="218" y="293" text-anchor="middle" class="label">PSA N₂-generátor</text>
+    <path d="M218 230 V260" class="gas"/>
+    <rect x="85" y="345" width="265" height="62" rx="4" class="soft"/>
+    <text x="218" y="372" text-anchor="middle" class="label">N₂-puffertartály</text>
+    <text x="218" y="391" text-anchor="middle" class="small">tisztaságmérés + visszacsapó szelep</text>
+    <path d="M218 315 V345" class="gas"/>
+    <rect x="85" y="437" width="265" height="55" rx="4" class="soft"/>
+    <text x="218" y="464" text-anchor="middle" class="label">Nyomáscsökkentő + átfolyásmérő</text>
+    <text x="218" y="481" text-anchor="middle" class="small">raktári N₂ fővezeték</text>
+    <path d="M218 407 V437" class="gas"/>
 
-    <rect x="145" y="205" width="145" height="72" rx="4" class="soft"/>
-    <text x="218" y="233" text-anchor="middle" class="label">N₂-puffertartály</text>
-    <text x="218" y="253" text-anchor="middle" class="small">visszacsapó + biztonsági szelep</text>
-    <path d="M322 162 V205 H290" class="gas"/>
+    <rect x="85" y="525" width="265" height="74" rx="4" class="soft"/>
+    <text x="218" y="551" text-anchor="middle" class="label">PLC / kezelőszekrény</text>
+    <text x="218" y="571" text-anchor="middle" class="small">O₂, nyomás, hőmérséklet, naplózás</text>
+    <text x="218" y="589" text-anchor="middle" class="small">belépési tiltás és riasztás</text>
 
-    <rect x="105" y="325" width="225" height="75" rx="4" class="soft"/>
-    <text x="218" y="351" text-anchor="middle" class="label">Nyomás- és átfolyásszabályozás</text>
-    <text x="218" y="374" text-anchor="middle" class="small">elzáró • mérő • szabályozószelep</text>
-    <path d="M218 277 V325" class="gas"/>
-
-    <rect x="85" y="455" width="265" height="92" rx="4" class="soft"/>
-    <text x="218" y="483" text-anchor="middle" class="label">PLC / kezelőszekrény</text>
-    <text x="218" y="504" text-anchor="middle" class="small">O₂, nyomás, hőmérséklet, naplózás</text>
-    <text x="218" y="524" text-anchor="middle" class="small">belépési tiltás és riasztás</text>
-
-    <rect x="85" y="590" width="265" height="68" rx="4" class="soft"/>
-    <text x="218" y="618" text-anchor="middle" class="label">Vész-/ciklusvégi elszívó</text>
-    <text x="218" y="638" text-anchor="middle" class="small">szabadtéri, biztonságos kifúvás</text>
+    <rect x="85" y="630" width="265" height="55" rx="4" class="soft"/>
+    <text x="218" y="655" text-anchor="middle" class="label">Ciklusvégi elszívó ventilátor</text>
+    <text x="218" y="673" text-anchor="middle" class="small">külön, szabadtéri kifúvás</text>
 
     <!-- Warehouse -->
     <text x="485" y="45" class="head">2. Tömített raktár – felülnézet</text>
@@ -98,8 +108,8 @@
     <text x="978" y="575" text-anchor="middle" class="small">A tárolóegységek között légáramlási útvonalat kell biztosítani.</text>
 
     <!-- injection manifold and zones -->
-    <path d="M430 362 H625 V520 H1295" class="gas"/>
-    <text x="510" y="335" class="small blue">N₂ fővezeték</text>
+    <path d="M430 464 H625 V520 H1295" class="gas"/>
+    <text x="510" y="440" class="small blue">N₂ fővezeték</text>
     <path d="M727 520 V412" class="gas"/>
     <path d="M907 520 V412" class="gas"/>
     <path d="M1087 520 V412" class="gas"/>
@@ -133,11 +143,11 @@
     <text x="965" y="640" text-anchor="middle" class="small red">O₂-mintavétel: felső, középső és padlószinti zónákban; a PLC a legmagasabb mért O₂-érték alapján szabályoz.</text>
 
     <!-- Connections to equipment -->
-    <path d="M430 362 H475" class="gas"/>
-    <path d="M475 155 H430 V625 H350" class="extract"/>
-    <path d="M350 500 H475" class="thin" stroke-dasharray="5 5"/>
-    <text x="355" y="485" text-anchor="middle" class="small">jel- és</text>
-    <text x="355" y="501" text-anchor="middle" class="small">vezérlőkábelek</text>
+    <path d="M430 464 H475" class="gas"/>
+    <path d="M475 155 H430 V657 H350" class="extract"/>
+    <path d="M350 565 H475" class="thin" stroke-dasharray="5 5"/>
+    <text x="355" y="550" text-anchor="middle" class="small">jel- és</text>
+    <text x="355" y="566" text-anchor="middle" class="small">vezérlőkábelek</text>
 
     <!-- lower cutaway -->
     <text x="45" y="755" class="head">3. Metszeti elv és üzemeltetési sorrend</text>
@@ -164,5 +174,33 @@
     <text x="850" y="895" class="small red">Kezelés alatt belépés tilos. Csak igazoltan normál O₂-szint után lehet belépni.</text>
   </svg>
   <p class="note"><span class="warning">Biztonsági megjegyzés:</span> Az N₂ oxigénhiányt okoz, ezért a részletes kivitelezési tervhez kockázatértékelés, munkavédelmi reteszelés, O₂-riasztás, vészhelyzeti eljárás és jogosult tervezői felülvizsgálat szükséges. A kezelési O₂-célértéket és időtartamot a célkártevő, hőmérséklet és a vonatkozó előírások alapján kell meghatározni.</p>
+
+  <section class="page-break summary">
+    <h1>Ciprusi N₂-kísérlet – magyar nyelvű összefoglaló</h1>
+    <p><strong>Forrás:</strong> <em>Control of Stored Grain Insects by Using Nitrogen in Large Concrete Silos in Cyprus</em>, 2012. A vizsgálat nagyméretű betonsilókban, helyszínen előállított nitrogénnel végzett kontrollált légterű rovarirtást értékelt.</p>
+
+    <h2>Mit vizsgáltak?</h2>
+    <p>A silók tömítettségének javítását, a nyomásesési próbával mért gáztartó képességet, valamint a nitrogénes kezelés O₂-csökkentő és szinten tartó képességét. A nitrogént környezeti levegőből előállító EcO₂ rendszer termelte, majd az anyagot a silók alsó csatlakozási pontjain keresztül juttatták be.</p>
+
+    <table>
+      <tr><th>Vizsgálati elem</th><th>Fontos adat / eredmény</th></tr>
+      <tr><td>Tároló</td><td>Nagyméretű betonsilók; a nitrogént alsó, 25 mm-es acél csatlakozáson keresztül vezették be.</td></tr>
+      <tr><td>Tömörségvizsgálat</td><td>250 Pa-ról 125 Pa-ra történő nyomásesés félidejét mérték. A legtömítettebb bemutatott silónál 4 perc 50 másodperc volt.</td></tr>
+      <tr><td>Tömítési intézkedések</td><td>Repedések és fal–tető csatlakozások tömítése; gáztömör szelepek a szellőző-, betároló- és ürítőnyílásoknál.</td></tr>
+      <tr><td>Elért O₂-koncentráció</td><td>Minden vizsgált silóban 0,9% O₂ alá csökkent; a kezelési időszakban 0,1–0,9% között tartották.</td></tr>
+      <tr><td>Fenntartás időtartama</td><td>A silótól függően 261, 404, illetve 523 óra, azaz kb. 11, 17 és 22 nap.</td></tr>
+      <tr><td>Üzemelési tanulság</td><td>A tömítés és a tömített szerelvények javítása mérhetően növelte a gáztartó képességet; a cél-O₂ fenntartása nem egyszeri feltöltés, hanem mérésvezérelt N₂-utántöltés feladata.</td></tr>
+    </table>
+
+    <h2>Átvihető tanulság a tervezett vetőmagraktárra</h2>
+    <ul>
+      <li>Az alsó/középső N₂-befúvás és felső, szabályozott levegőelvezetés működő elv; aktív elszívó ventilátor a kezelés alatt nem alapfeltétel.</li>
+      <li>A felső kifúvó a kezdeti átöblítéskor legyen nyitva, majd a cél-O₂ elérésekor zárjon; a fenntartás automatikus N₂-utántöltéssel és enyhe pozitív nyomással történjen.</li>
+      <li>A 0,1–0,9% O₂ tartományhoz több belső mintavételi pont, termékoldali N₂-tisztaságmérés és megfelelően nagy tisztaságú generátor szükséges.</li>
+      <li>A ciprusi kísérlet 11–22 napos fenntartást alkalmazott. Ez nem igazolja az általános 5 napos kezelést; a szükséges expozíció a célkártevőtől és a tárolt vetőmag legalacsonyabb hőmérsékletétől függ.</li>
+    </ul>
+
+    <p class="source">Hivatkozás: G. G. Athanassiou és mtsai. (2012), <em>Control of Stored Grain Insects by Using Nitrogen in Large Concrete Silos in Cyprus</em>, 8th International Conference on Controlled Atmosphere and Fumigation in Stored Products.</p>
+  </section>
 </body>
 </html>

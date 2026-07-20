@@ -84,11 +84,12 @@
     <p class="small">A tényleges szivárgási ütem a helyszíni tömörségvizsgálatból (pl. nyomásesési próba) határozható meg. A táblázat szerint a választott 150–200 Nm³/h generátor kapacitása minden reális szivárgási tartományhoz jelentős, többszázszoros tartalékot biztosít a fenntartási fázisban — a generátor méretét ezért a 24 órás <em>inertizálási</em> fázis, nem a fenntartás, határozza meg.</p>
 
     <h2>Fontos korlátozó feltételek a túlnyomásos modellhez</h2>
+    <p>A folyamat zárt kötegelt (batch) üzem: a vetőmag betárolása után az ajtót lezárják, a kezelés alatt nincs ajtónyitás, majd az idő letelte után nyitják, átszellőztetik és kitárolnak. Így az ajtónyitásból eredő levegőbeszivárgás a tartási fázisban nem releváns kockázat — ez kizárólag a ciklus végi, tervezett átszellőztetési lépésre korlátozódik, amit a rendszer külön, ellenőrzött visszaszellőztetéssel kezel.</p>
     <ul>
-      <li><strong>A pozitív nyomást folyamatosan és mindenhol fenn kell tartani.</strong> Ha a nyomás átmenetileg negatívba fordul — például hőmérséklet-csökkenés okozta gázösszehúzódás ("légzés"), ajtónyitás, vagy ventilátor véletlen negatív nyomást keltő működése miatt —, akkor ezekben a pillanatokban levegő szivárog be, és a korábbi, hígításos modell válik érvényessé.</li>
-      <li><strong>A PLC-nek folytonosan szabályoznia kell a nyomást</strong> az O₂-mérés mellett, hogy a rendszer sose kerüljön negatív nyomás alá; ehhez gyors reagálású nyomásmérés és -szabályozás szükséges, különösen éjszakai lehűlés vagy csapadékos, hidegfronti időjárás esetén.</li>
+      <li><strong>A pozitív nyomást a tartási fázis teljes 5 napjában folyamatosan és mindenhol fenn kell tartani.</strong> Ha a nyomás átmenetileg negatívba fordul — jellemzően hőmérséklet-csökkenés okozta gázösszehúzódás ("légzés"), légköri nyomásingadozás, vagy a ventilátor/generátor véletlen negatív nyomást keltő üzeme miatt —, akkor ezekben a pillanatokban levegő szivárog be, és a korábbi, hígításos modell válik érvényessé.</li>
+      <li><strong>A hőmérséklet-ingadozás ("légzés") a fő fennmaradó kockázat.</strong> Éjszakai lehűlésnél a raktári gáz összehúzódik, ami átmeneti nyomáscsökkenést okozhat; ezt a PLC-nek a nyomásszabályozó automatikus N₂-utántöltéssel kell kompenzálnia, mielőtt a nyomás negatívba fordulna.</li>
       <li><strong>A diffúziós O₂-transzport</strong> (molekuláris diffúzió a tömítetlenségeken, a nyomáskülönbség irányával szemben) a bulk-áramláshoz képest általában kis hatású, de nem nulla; ezért a belső O₂-mérés a végső biztonsági visszajelzés, nem csak a nyomásszabályozás.</li>
-      <li>A táblázat ezért <strong>ideális, folyamatosan pozitív nyomású üzemre</strong> érvényes; a tényleges üzemi adatokat a próbaüzem és a folyamatos O₂-naplózás igazolja.</li>
+      <li>A táblázat ezért <strong>ideális, folyamatosan pozitív nyomású, zárt kötegelt üzemre</strong> érvényes; a tényleges üzemi adatokat a próbaüzem és a folyamatos O₂- és nyomásnaplózás igazolja.</li>
     </ul>
   </section>
 </body>

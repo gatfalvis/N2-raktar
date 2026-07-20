@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="hu">
+<head>
+  <meta charset="utf-8">
+  <title>N₂-raktár – szükséges berendezésteljesítmények</title>
+  <style>
+    @page { size: A4 landscape; margin: 14mm; }
+    * { box-sizing: border-box; }
+    body { margin: 0; color: #111; font: 11px/1.3 Arial, sans-serif; }
+    h1 { margin: 0 0 5px; font-size: 21px; }
+    h2 { margin: 14px 0 6px; font-size: 15px; }
+    p { margin: 5px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 9px 0; }
+    th, td { border: 1px solid #222; padding: 6px; text-align: left; vertical-align: top; }
+    th { background: #e9e9e9; }
+    .small { font-size: 9px; color: #333; }
+    .warning { font-weight: 700; }
+  </style>
+</head>
+<body>
+  <h1>N₂-raktár – szükséges berendezésteljesítmények</h1>
+  <p><strong>Előméretezési alap:</strong> 2 000 m³ nettó gáztér, ≤1,0 tf% raktári O₂-cél, ≥99,9 tf% N₂ termékgáz, 24 órás kezdeti inertizálási célidő és 5 napos szinten tartás.</p>
+
+  <table>
+    <tr><th>Berendezés / elem</th><th>Javasolt teljesítmény vagy méret</th><th>Mire szolgál?</th></tr>
+    <tr><td>PSA N₂-generátor</td><td><strong>350 Nm³/h @ 99,9% N₂</strong></td><td>Kb. 24 óra alatt történő inertizálás, mérsékelt üzemi tartalékkal.</td></tr>
+    <tr><td>Indító N₂-mennyiség</td><td><strong>7 500–8 000 Nm³</strong></td><td>2 000 m³ gáztér 21%-ról ≤1% O₂-re csökkentéséhez; tartalmaz eloszlási és veszteségi tartalékot.</td></tr>
+    <tr><td>Kompresszor</td><td><strong>1 000–1 300 Nm³/h FAD, 7–8 bar, kb. 110–150 kW</strong></td><td>A PSA generátor sűrített levegő ellátása. A végleges értéket a kiválasztott PSA gyártó levegő/N₂ aránya rögzíti.</td></tr>
+    <tr><td>Nedveslevegő-tartály</td><td><strong>3–5 m³</strong></td><td>Kompresszor utáni nyomáspuffer, kondenzvíz leválasztása automatikus ürítéssel.</td></tr>
+    <tr><td>Hűtveszárító és szűrők</td><td><strong>≥1 300 Nm³/h</strong></td><td>PSA-védelem: nedvesség, olaj és részecskék eltávolítása.</td></tr>
+    <tr><td>Szárazlevegő-tartály</td><td><strong>2–5 m³</strong></td><td>A PSA ciklikus levegőigényének csillapítása.</td></tr>
+    <tr><td>N₂-puffertartály</td><td><strong>10–20 m³, 8–10 bar</strong></td><td>Termékgáz-ellátás és rövid csúcsterhelések kiegyenlítése.</td></tr>
+    <tr><td>N₂ fővezeték</td><td><strong>előzetesen DN80–DN100</strong></td><td>350 Nm³/h átöblítési térfogatáram továbbítása; véglegesítése nyomásveszteség-számítással.</td></tr>
+    <tr><td>Befúvási zónák</td><td><strong>4–6 külön szabályozható ág</strong></td><td>Alsó/középső zónás gázelosztás, holtterek csökkentése.</td></tr>
+    <tr><td>Felső kifúvó</td><td><strong>DN100–DN125 szabályozott szelep</strong></td><td>A kezdeti átöblítéskor a kiszorított levegő elvezetése; a cél-O₂ elérése után zár.</td></tr>
+    <tr><td>O₂-mérés</td><td><strong>minimum 6 belső mintavételi pont + PLC</strong></td><td>Az O₂-határérték vezérlése a raktár legmagasabb mért O₂-értéke alapján.</td></tr>
+    <tr><td>Ciklusvégi elszívó ventilátor</td><td><strong>6 000–8 000 m³/h</strong></td><td>Csak visszaszellőztetéshez: kb. 3–4 légcsere/óra. Nem az inertizálási fázis eszköze.</td></tr>
+  </table>
+
+  <h2>Üzemeltetési sorrend</h2>
+  <p><strong>Kompresszor → hűtveszárító és szűrők → PSA N₂-generátor → N₂-puffertartály → nyomáscsökkentő / átfolyásmérő → raktári csőhálózat.</strong></p>
+  <p>Az inertizálás során a N₂ alul vagy az áru légtereiben áramlik be; a kiszorított levegő a felső, szabályozott kifúvón távozik. A célérték elérése után a rendszer kis pozitív nyomással, O₂-alapú automatikus N₂-utántöltéssel tartja az értéket.</p>
+  <p class="small"><span class="warning">Fontos:</span> Az 5 napos kezelés kártevőirtási eredményessége nem vezethető le kizárólag a berendezés teljesítményéből. A célszervezet, a peték jelenléte és a vetőmag legalacsonyabb hőmérséklete alapján külön validálás szükséges. A részletes kivitelezéshez tömörségvizsgálat, munkavédelmi reteszelés, külső O₂-riasztás és jogosult tervezői felülvizsgálat szükséges.</p>
+</body>
+</html>

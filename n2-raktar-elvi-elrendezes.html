@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="hu">
+<head>
+  <meta charset="utf-8">
+  <title>N₂-raktár – elvi berendezés-elrendezési vázlat</title>
+  <style>
+    @page { size: A3 landscape; margin: 12mm; }
+    * { box-sizing: border-box; }
+    body { margin: 0; color: #111; font: 12px/1.35 Arial, sans-serif; }
+    h1 { margin: 0 0 3px; font-size: 22px; }
+    .meta { margin: 0 0 12px; color: #444; font-size: 11px; }
+    svg { display: block; width: 93%; height: auto; margin: 0 auto; border: 1px solid #222; }
+    .note { margin: 9px 0 0; font-size: 11px; }
+    .warning { font-weight: 700; }
+  </style>
+</head>
+<body>
+  <h1>N₂-raktár – elvi berendezés-elrendezési vázlat</h1>
+  <p class="meta">Nem méretarányos koncepció. Méretezéshez a tényleges nettó gáztérfogat, a tömörségvizsgálat és az engedélyezett kezelési paraméterek szükségesek.</p>
+  <svg viewBox="0 0 1500 950" role="img" aria-label="Nitrogénes raktárkezelés elvi berendezési elrendezése">
+    <defs>
+      <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+        <path d="M0,0 L0,6 L9,3 z" fill="#111"/>
+      </marker>
+      <marker id="blueArrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+        <path d="M0,0 L0,6 L9,3 z" fill="#1261a0"/>
+      </marker>
+      <style>
+        .line { fill:none; stroke:#111; stroke-width:3; }
+        .thin { fill:none; stroke:#111; stroke-width:2; }
+        .gas { fill:none; stroke:#1261a0; stroke-width:5; marker-end:url(#blueArrow); }
+        .extract { fill:none; stroke:#666; stroke-width:5; stroke-dasharray:12 7; marker-end:url(#arrow); }
+        .box { fill:#fff; stroke:#111; stroke-width:3; }
+        .soft { fill:#f4f4f4; stroke:#111; stroke-width:2; }
+        .seed { fill:#e9e9e9; stroke:#666; stroke-width:1.5; }
+        .label { font: 15px Arial, sans-serif; }
+        .small { font: 12px Arial, sans-serif; }
+        .head { font: bold 18px Arial, sans-serif; }
+        .subhead { font: bold 14px Arial, sans-serif; }
+        .blue { fill:#1261a0; font-weight:bold; }
+        .red { fill:#9d1d1d; font-weight:bold; }
+      </style>
+    </defs>
+
+    <!-- External plant -->
+    <text x="45" y="45" class="head">1. Külső gépészeti zóna</text>
+    <rect x="35" y="60" width="395" height="650" rx="5" class="box"/>
+    <rect x="65" y="100" width="145" height="62" rx="4" class="soft"/>
+    <text x="137" y="126" text-anchor="middle" class="label">N₂-generátor</text>
+    <text x="137" y="146" text-anchor="middle" class="small">+ levegő-előkészítés</text>
+    <rect x="250" y="100" width="145" height="62" rx="4" class="soft"/>
+    <text x="322" y="136" text-anchor="middle" class="label">Kompresszor</text>
+    <path d="M210 131 H250" class="gas"/>
+
+    <rect x="145" y="205" width="145" height="72" rx="4" class="soft"/>
+    <text x="218" y="233" text-anchor="middle" class="label">N₂-puffertartály</text>
+    <text x="218" y="253" text-anchor="middle" class="small">visszacsapó + biztonsági szelep</text>
+    <path d="M322 162 V205 H290" class="gas"/>
+
+    <rect x="105" y="325" width="225" height="75" rx="4" class="soft"/>
+    <text x="218" y="351" text-anchor="middle" class="label">Nyomás- és átfolyásszabályozás</text>
+    <text x="218" y="374" text-anchor="middle" class="small">elzáró • mérő • szabályozószelep</text>
+    <path d="M218 277 V325" class="gas"/>
+
+    <rect x="85" y="455" width="265" height="92" rx="4" class="soft"/>
+    <text x="218" y="483" text-anchor="middle" class="label">PLC / kezelőszekrény</text>
+    <text x="218" y="504" text-anchor="middle" class="small">O₂, nyomás, hőmérséklet, naplózás</text>
+    <text x="218" y="524" text-anchor="middle" class="small">belépési tiltás és riasztás</text>
+
+    <rect x="85" y="590" width="265" height="68" rx="4" class="soft"/>
+    <text x="218" y="618" text-anchor="middle" class="label">Vész-/ciklusvégi elszívó</text>
+    <text x="218" y="638" text-anchor="middle" class="small">szabadtéri, biztonságos kifúvás</text>
+
+    <!-- Warehouse -->
+    <text x="485" y="45" class="head">2. Tömített raktár – felülnézet</text>
+    <rect x="475" y="60" width="980" height="650" rx="5" class="box"/>
+    <text x="965" y="87" text-anchor="middle" class="small">Nettó gáztérfogat alapján méretezendő; a rajz nem méretarányos</text>
+
+    <!-- Airlock and door -->
+    <rect x="475" y="300" width="100" height="150" class="soft"/>
+    <text x="525" y="348" text-anchor="middle" class="label">Tömített</text>
+    <text x="525" y="368" text-anchor="middle" class="label">előtér</text>
+    <text x="525" y="392" text-anchor="middle" class="small">ajtóreteszelés</text>
+    <text x="525" y="410" text-anchor="middle" class="small">külső O₂-riasztó</text>
+    <path d="M575 350 H605" class="line"/>
+
+    <!-- Seed store -->
+    <rect x="625" y="180" width="705" height="430" rx="4" class="thin"/>
+    <text x="978" y="207" text-anchor="middle" class="subhead">Vetőmag tárolási zóna</text>
+    <rect x="660" y="245" width="135" height="145" class="seed"/>
+    <rect x="840" y="245" width="135" height="145" class="seed"/>
+    <rect x="1020" y="245" width="135" height="145" class="seed"/>
+    <rect x="1200" y="245" width="95" height="145" class="seed"/>
+    <text x="727" y="320" text-anchor="middle" class="label">B1</text>
+    <text x="907" y="320" text-anchor="middle" class="label">B2</text>
+    <text x="1087" y="320" text-anchor="middle" class="label">B3</text>
+    <text x="1247" y="320" text-anchor="middle" class="label">B4</text>
+    <text x="978" y="575" text-anchor="middle" class="small">A tárolóegységek között légáramlási útvonalat kell biztosítani.</text>
+
+    <!-- injection manifold and zones -->
+    <path d="M430 362 H625 V520 H1295" class="gas"/>
+    <text x="510" y="335" class="small blue">N₂ fővezeték</text>
+    <path d="M727 520 V412" class="gas"/>
+    <path d="M907 520 V412" class="gas"/>
+    <path d="M1087 520 V412" class="gas"/>
+    <path d="M1247 520 V412" class="gas"/>
+    <circle cx="727" cy="412" r="10" fill="#1261a0"/>
+    <circle cx="907" cy="412" r="10" fill="#1261a0"/>
+    <circle cx="1087" cy="412" r="10" fill="#1261a0"/>
+    <circle cx="1247" cy="412" r="10" fill="#1261a0"/>
+    <text x="728" y="545" text-anchor="middle" class="small blue">B1 befúvás</text>
+    <text x="908" y="545" text-anchor="middle" class="small blue">B2 befúvás</text>
+    <text x="1088" y="545" text-anchor="middle" class="small blue">B3 befúvás</text>
+    <text x="1248" y="545" text-anchor="middle" class="small blue">B4 befúvás</text>
+
+    <!-- Extraction manifold -->
+    <path d="M650 125 H1375 V180" class="extract"/>
+    <path d="M727 125 V180 M907 125 V180 M1087 125 V180 M1247 125 V180" class="thin"/>
+    <text x="980" y="115" text-anchor="middle" class="small">felső elszívó gyűjtővezeték</text>
+    <path d="M1375 125 H1455" class="extract"/>
+
+    <!-- Sensors -->
+    <g>
+      <path d="M675 430 v-36" class="thin"/><polygon points="675,384 667,397 683,397" fill="#9d1d1d"/>
+      <text x="675" y="452" text-anchor="middle" class="small red">O₂-1</text>
+      <path d="M860 455 v-36" class="thin"/><polygon points="860,409 852,422 868,422" fill="#9d1d1d"/>
+      <text x="860" y="477" text-anchor="middle" class="small red">O₂-2</text>
+      <path d="M1050 455 v-36" class="thin"/><polygon points="1050,409 1042,422 1058,422" fill="#9d1d1d"/>
+      <text x="1050" y="477" text-anchor="middle" class="small red">O₂-3</text>
+      <path d="M1265 455 v-36" class="thin"/><polygon points="1265,409 1257,422 1273,422" fill="#9d1d1d"/>
+      <text x="1265" y="477" text-anchor="middle" class="small red">O₂-4</text>
+    </g>
+    <text x="965" y="640" text-anchor="middle" class="small red">O₂-mintavétel: felső, középső és padlószinti zónákban; a PLC a legmagasabb mért O₂-érték alapján szabályoz.</text>
+
+    <!-- Connections to equipment -->
+    <path d="M430 362 H475" class="gas"/>
+    <path d="M475 155 H430 V625 H350" class="extract"/>
+    <path d="M350 500 H475" class="thin" stroke-dasharray="5 5"/>
+    <text x="355" y="485" text-anchor="middle" class="small">jel- és</text>
+    <text x="355" y="501" text-anchor="middle" class="small">vezérlőkábelek</text>
+
+    <!-- lower cutaway -->
+    <text x="45" y="755" class="head">3. Metszeti elv és üzemeltetési sorrend</text>
+    <rect x="35" y="775" width="750" height="145" class="box"/>
+    <line x1="55" y1="795" x2="765" y2="795" class="thin"/>
+    <line x1="55" y1="900" x2="765" y2="900" class="line"/>
+    <text x="65" y="788" class="small">mennyezet / felső elszívás és O₂-minta</text>
+    <rect x="170" y="825" width="450" height="58" class="seed"/>
+    <text x="395" y="859" text-anchor="middle" class="label">vetőmag tárolás</text>
+    <path d="M90 895 H145" class="gas"/>
+    <text x="60" y="880" class="small blue">alsó/közép</text>
+    <text x="60" y="894" class="small blue">N₂-befúvás</text>
+    <path d="M700 810 H755" class="extract"/>
+    <text x="612" y="817" class="small">felső levegő-elvezetés</text>
+
+    <rect x="830" y="755" width="625" height="165" rx="4" class="soft"/>
+    <text x="850" y="783" class="subhead">Üzemállapotok</text>
+    <text x="850" y="810" class="label">1. Inertizálás:</text>
+    <text x="980" y="810" class="label">alsó/közép N₂-befúvás + felső elszívás</text>
+    <text x="850" y="836" class="label">2. Tartás:</text>
+    <text x="980" y="836" class="label">zárt elszívás, kis pozitív nyomás, automatikus N₂-utántöltés</text>
+    <text x="850" y="862" class="label">3. Kiengedés:</text>
+    <text x="980" y="862" class="label">vezérelt frisslevegős elszívás, többpontos O₂-ellenőrzés</text>
+    <text x="850" y="895" class="small red">Kezelés alatt belépés tilos. Csak igazoltan normál O₂-szint után lehet belépni.</text>
+  </svg>
+  <p class="note"><span class="warning">Biztonsági megjegyzés:</span> Az N₂ oxigénhiányt okoz, ezért a részletes kivitelezési tervhez kockázatértékelés, munkavédelmi reteszelés, O₂-riasztás, vészhelyzeti eljárás és jogosult tervezői felülvizsgálat szükséges. A kezelési O₂-célértéket és időtartamot a célkártevő, hőmérséklet és a vonatkozó előírások alapján kell meghatározni.</p>
+</body>
+</html>

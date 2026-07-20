@@ -2,7 +2,7 @@
 <html lang="hu">
 <head>
   <meta charset="utf-8">
-  <title>N₂-raktár – szükséges berendezésteljesítmények</title>
+  <title>N₂-raktár – 24 órás inertizálás berendezésméretezése</title>
   <style>
     @page { size: A4 landscape; margin: 14mm; }
     * { box-sizing: border-box; }
@@ -15,24 +15,25 @@
     th { background: #e9e9e9; }
     .small { font-size: 9px; color: #333; }
     .warning { font-weight: 700; }
+    .page-break { break-before: page; page-break-before: always; }
   </style>
 </head>
 <body>
-  <h1>N₂-raktár – szükséges berendezésteljesítmények</h1>
+  <h1>N₂-raktár – 24 órás inertizálás: szükséges berendezésteljesítmények</h1>
   <p><strong>Előméretezési alap:</strong> 2 000 m³ nettó gáztér, ≤1,0 tf% raktári O₂-cél, ≥99,9 tf% N₂ termékgáz, 24 órás kezdeti inertizálási célidő és 5 napos szinten tartás.</p>
 
   <table>
     <tr><th>Berendezés / elem</th><th>Javasolt teljesítmény vagy méret</th><th>Mire szolgál?</th></tr>
-    <tr><td>PSA N₂-generátor</td><td><strong>350 Nm³/h @ 99,9% N₂</strong></td><td>Kb. 24 óra alatt történő inertizálás, mérsékelt üzemi tartalékkal.</td></tr>
+    <tr><td>PSA N₂-generátor</td><td><strong>350 Nm³/h @ 99,9% N₂</strong></td><td>24 órás inertizálásra kiválasztott névleges kapacitás; 34% térfogatáram-tartalék az elméleti minimumhoz képest.</td></tr>
     <tr><td>Indító N₂-mennyiség</td><td><strong>7 500–8 000 Nm³</strong></td><td>2 000 m³ gáztér 21%-ról ≤1% O₂-re csökkentéséhez; tartalmaz eloszlási és veszteségi tartalékot.</td></tr>
-    <tr><td>Kompresszor</td><td><strong>1 000–1 300 Nm³/h FAD, 7–8 bar, kb. 110–150 kW</strong></td><td>A PSA generátor sűrített levegő ellátása. A végleges értéket a kiválasztott PSA gyártó levegő/N₂ aránya rögzíti.</td></tr>
+    <tr><td>Kompresszor</td><td><strong>1 250 Nm³/h FAD, 7–8 bar, 132 kW</strong></td><td>Előzetes választás 350 Nm³/h, 99,9%-os PSA-hoz. A rendelési értéket a PSA gyártó garantált levegő/N₂ aránya igazolja.</td></tr>
     <tr><td>Nedveslevegő-tartály</td><td><strong>3–5 m³</strong></td><td>Kompresszor utáni nyomáspuffer, kondenzvíz leválasztása automatikus ürítéssel.</td></tr>
-    <tr><td>Hűtveszárító és szűrők</td><td><strong>≥1 300 Nm³/h</strong></td><td>PSA-védelem: nedvesség, olaj és részecskék eltávolítása.</td></tr>
+    <tr><td>Hűtveszárító és szűrők</td><td><strong>≥1 400 Nm³/h</strong></td><td>PSA-védelem: nedvesség, olaj és részecskék eltávolítása; 12% áramlási tartalék.</td></tr>
     <tr><td>Szárazlevegő-tartály</td><td><strong>2–5 m³</strong></td><td>A PSA ciklikus levegőigényének csillapítása.</td></tr>
-    <tr><td>N₂-puffertartály</td><td><strong>10–20 m³, 8–10 bar</strong></td><td>Termékgáz-ellátás és rövid csúcsterhelések kiegyenlítése.</td></tr>
-    <tr><td>N₂ fővezeték</td><td><strong>előzetesen DN80–DN100</strong></td><td>350 Nm³/h átöblítési térfogatáram továbbítása; véglegesítése nyomásveszteség-számítással.</td></tr>
+    <tr><td>N₂-puffertartály</td><td><strong>15 m³, PN10</strong></td><td>Termékgáz-ellátás és rövid csúcsterhelések kiegyenlítése.</td></tr>
+    <tr><td>N₂ fővezeték</td><td><strong>DN80</strong></td><td>350 Nm³/h átöblítési térfogatáramhoz; véglegesítése vezetékhossz és nyomásveszteség alapján.</td></tr>
     <tr><td>Befúvási zónák</td><td><strong>4–6 külön szabályozható ág</strong></td><td>Alsó/középső zónás gázelosztás, holtterek csökkentése.</td></tr>
-    <tr><td>Felső kifúvó</td><td><strong>DN100–DN125 szabályozott szelep</strong></td><td>A kezdeti átöblítéskor a kiszorított levegő elvezetése; a cél-O₂ elérése után zár.</td></tr>
+    <tr><td>Felső kifúvó</td><td><strong>DN125 szabályozott szelep</strong></td><td>A kezdeti átöblítéskor a kiszorított levegő elvezetése; a cél-O₂ elérése után zár.</td></tr>
     <tr><td>O₂-mérés</td><td><strong>minimum 6 belső mintavételi pont + PLC</strong></td><td>Az O₂-határérték vezérlése a raktár legmagasabb mért O₂-értéke alapján.</td></tr>
     <tr><td>Ciklusvégi elszívó ventilátor</td><td><strong>6 000–8 000 m³/h</strong></td><td>Csak visszaszellőztetéshez: kb. 3–4 légcsere/óra. Nem az inertizálási fázis eszköze.</td></tr>
   </table>
@@ -41,5 +42,31 @@
   <p><strong>Kompresszor → hűtveszárító és szűrők → PSA N₂-generátor → N₂-puffertartály → nyomáscsökkentő / átfolyásmérő → raktári csőhálózat.</strong></p>
   <p>Az inertizálás során a N₂ alul vagy az áru légtereiben áramlik be; a kiszorított levegő a felső, szabályozott kifúvón távozik. A célérték elérése után a rendszer kis pozitív nyomással, O₂-alapú automatikus N₂-utántöltéssel tartja az értéket.</p>
   <p class="small"><span class="warning">Fontos:</span> Az 5 napos kezelés kártevőirtási eredményessége nem vezethető le kizárólag a berendezés teljesítményéből. A célszervezet, a peték jelenléte és a vetőmag legalacsonyabb hőmérséklete alapján külön validálás szükséges. A részletes kivitelezéshez tömörségvizsgálat, munkavédelmi reteszelés, külső O₂-riasztás és jogosult tervezői felülvizsgálat szükséges.</p>
+
+  <section class="page-break">
+    <h1>24 órás inertizálási számítás és fenntartási kapacitás</h1>
+    <table>
+      <tr><th>Paraméter</th><th>Érték</th><th>Magyarázat</th></tr>
+      <tr><td>Számítási gáztér</td><td>V = 2 000 m³</td><td>Előzetes, nettó gáztérfogatra kerekített érték.</td></tr>
+      <tr><td>Kezdeti O₂-koncentráció</td><td>C₀ = 20,9%</td><td>Normál levegő.</td></tr>
+      <tr><td>N₂ termékgáz O₂-tartalma</td><td>C<sub>s</sub> = 0,1%</td><td>99,9% N₂ tisztaság esetén.</td></tr>
+      <tr><td>Raktári célérték</td><td>C<sub>cél</sub> = 1,0%</td><td>A fenntartási automatika felső O₂-határértéke.</td></tr>
+      <tr><td>Elméleti, keveredéses N₂-igény</td><td>V × ln[(C₀ − C<sub>s</sub>) / (C<sub>cél</sub> − C<sub>s</sub>)] = <strong>6 280 Nm³</strong></td><td>Ideális teljes keveredés esetére számított mennyiség.</td></tr>
+      <tr><td>24 órás elméleti átlagáram</td><td>6 280 / 24 = <strong>262 Nm³/h</strong></td><td>Ez nem tartalmaz tömítetlenségi és eloszlási tartalékot.</td></tr>
+      <tr><td>Választott generátor 24 óra alatt</td><td>350 × 24 = <strong>8 400 Nm³</strong></td><td>2 120 Nm³, azaz kb. 34% tartalék az elméleti mennyiség felett.</td></tr>
+    </table>
+
+    <h2>Fenntartás az inertizálás után</h2>
+    <p>A fenntartó N₂-fogyasztást nem lehet a raktártérfogatból hitelesen meghatározni: azt a helyszíni tömörségvizsgálat és O₂-emelkedési próba adja meg. A rendszernek a kezdeti 24 órás ciklus után legfeljebb <strong>350 Nm³/h</strong> N₂-utántöltési kapacitása marad rendelkezésre.</p>
+    <table>
+      <tr><th>Feltételezett levegőbeszivárgás</th><th>Elméleti N₂-utántöltés a ≤1% O₂ tartáshoz*</th><th>5 napos mennyiség</th></tr>
+      <tr><td>1 Nm³/h</td><td>22 Nm³/h</td><td>2 650 Nm³</td></tr>
+      <tr><td>2 Nm³/h</td><td>44 Nm³/h</td><td>5 300 Nm³</td></tr>
+      <tr><td>5 Nm³/h</td><td>111 Nm³/h</td><td>13 300 Nm³</td></tr>
+      <tr><td>10 Nm³/h</td><td>221 Nm³/h</td><td>26 500 Nm³</td></tr>
+      <tr><td>15 Nm³/h</td><td>332 Nm³/h</td><td>39 800 Nm³</td></tr>
+    </table>
+    <p class="small">* Konzervatív, teljes keveredéses modell, 0,1% O₂-tartalmú betáplált N₂ mellett. Enyhe pozitív nyomásnál a tényleges külső levegőbeszivárgás kisebb lehet, mert a szivárgási irány kifelé mutat. A táblázat ezért tervezési felső becslés, nem mért fogyasztási adat.</p>
+  </section>
 </body>
 </html>
